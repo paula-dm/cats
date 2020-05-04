@@ -7,12 +7,13 @@ let render = () => {
 };
 
 buttonSubmit.addEventListener("click", () => {
-   if (inputText.value !== "") {
-       let newText = inputText.value;
-        newText.innerHTML=inputText.value;
-        newInputLine.append(newText);
-        render();
+    let newText = inputText.value;
+    if (newText !== "") {
 
-   }
-   else alert("Input field is empty!")
+        return newText;
+    }
+    else alert("Input field is empty!")
+
+    render();
+    inputText.innerHTML = newText;
 });
