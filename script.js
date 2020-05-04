@@ -1,19 +1,16 @@
 const buttonSubmit = document.getElementById('submit');
-const inputText = document.getElementById('input');
+const inputText = document.getElementById('inputOne');
 const newInputLine = document.getElementById('newLine');
 
 let render = () => {
-    inputText = "";
+    inputText.value = "";
 };
 
 buttonSubmit.addEventListener("click", () => {
     let newText = inputText.value;
-    if (newText !== "") {
-
-        return newText;
-    }
-    else alert("Input field is empty!")
-
+    let newParagraph = document.createElement("p");
+    newParagraph.innerHTML = newText;
     render();
-    inputText.innerHTML = newText;
+    return newInputLine.appendChild(newParagraph);
+
 });
