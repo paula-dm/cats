@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
     <title>Cats</title>
 </head>
+
 <body>
     <div class="container">
-        <p>What do you really want?</p>
-        <input id="input" class="firstInput"><button id='submit' class='submitInput'>SUBMIT</button>
-        <div id="newLine"></div>
+        <h2>What do you really want?</h2>
+        <input id="inputOne" class="firstInput">
+        <button id="submiter" class="btn btn-primary">SUBMIT</button>
+
+        <div id="alercik" role="alert" class="none">
+
+            Your field is empty, please fill! <button id="alertBtn" class="btn btn-danger">x</button>
+
+        </div>
+        <div id="alercik2" role="alert" class="none">
+
+            <p>Just get up and do what you want already!</p> <button id="alertBtn2" class="btn btn-danger">x</button>
+
+        </div>
+
+            <ul id="newLine" class="list-group"></ul>
+
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

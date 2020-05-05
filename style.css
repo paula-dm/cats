@@ -1,0 +1,22 @@
+p{
+    color: rgb(39, 9, 39);
+    margin: 2em;
+}
+.none{
+    display: none;
+}
+.alert{
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+}
+.btn-success, .btn-info{
+    width: 2em;
+    justify-self:  center;
+    padding: .2em;
+    margin: .1em;
+    font-weight: bolder;
+  
+}
