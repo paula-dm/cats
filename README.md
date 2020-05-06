@@ -1,8 +1,8 @@
 # cats
 
-A simple todo list.
+<h1>A simple todo list.</h1>
 <br>
-Main functions:
+<h3>Main functions:</h3>
 <br>
 -adds new tasks;
 <br>
