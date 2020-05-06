@@ -2,8 +2,17 @@ p{
     color: rgb(39, 9, 39);
     margin: 2em;
 }
+h4 {
+    text-transform: uppercase;
+}
 .none{
     display: none;
+}
+input{
+    margin-right:  1rem;
+}
+.buttons{
+    margin-left: 1rem;
 }
 .alert{
     display: block;
@@ -12,7 +21,10 @@ p{
     align-items: center;
     height: 5em;
 }
-.btn-success, .btn-info{
+.btn-info{
+    border: solid gray 1px;
+}
+.btn-danger, .btn-secondary{
     width: 2em;
     justify-self:  center;
     padding: .2em;
@@ -20,3 +32,28 @@ p{
     font-weight: bolder;
   
 }
+.done {
+    text-decoration: line-through red;
+    background-color: rgb(216, 217, 218);
+}
+
+@media only screen and (max-width: 600px) {
+    .btn-danger, .btn-secondary{
+     height: 1rem;
+     width: 1rem;
+     font-weight: lighter;
+     font-size: 10px;
+    }
+    li{
+        font-size: small;
+    }
+    #submiter {
+        height: 2rem;
+        font-size: 11px;
+        font-weight: bolder;
+  
+    }
+    p{
+        font-size: .8em;
+    }
+  }

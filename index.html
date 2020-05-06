@@ -14,22 +14,28 @@
 
 <body>
     <div class="container">
-        <h2>What do you really want?</h2>
-        <input id="inputOne" class="firstInput">
-        <button id="submiter" class="btn btn-primary">SUBMIT</button>
+        <!-- <h3>What I need</h3> -->
+        <br>
+        <input id="inputOne" class="firstInput form-control" placeholder="Czego potrzebujesz...">
 
         <div id="alercik" role="alert" class="none">
 
-            Your field is empty, please fill! <button id="alertBtn" class="btn btn-danger">x</button>
+            Nie możesz dodać pustego pola! <button id="alertBtn" class="btn btn-danger">x</button>
 
         </div>
+        <button id="submiter" class="btn btn-info btn-lg btn-block">DODAJ</button>
+
+
+
+        <h4 class="list-group list-group-item">Moja lista:</h4>
+
         <div id="alercik2" role="alert" class="none">
 
-            <p>Just get up and do what you want already!</p> <button id="alertBtn2" class="btn btn-danger">x</button>
+            <p>Możesz zrobić co chcesz, kiedy tylko chcesz!</p> <button id="alertBtn2" class="btn btn-danger">x</button>
 
         </div>
 
-            <ul id="newLine" class="list-group"></ul>
+        <ul id="newLine" class="list-group"></ul>
 
     </div>
     <script src="script.js"></script>

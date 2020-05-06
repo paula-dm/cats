@@ -5,8 +5,16 @@ const myAlert = document.getElementById('alercik');
 const myAlert2 = document.getElementById('alercik2');
 const buttonAlert = document.getElementById("alertBtn");
 const buttonAlert2 = document.getElementById("alertBtn2");
-const taskList = [{name: "Put my pijamas on"}];
 
+
+const saveToLocalStorage = function(){
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+};
+const getFromLocalStorage = function(){
+    return JSON.parse(localStorage.getItem("taskList"));
+};
+
+const taskList =  getFromLocalStorage() || [{name: "Przykład, możesz go usunąć", completed: false,}];
 
 const addNewItem = () => {
 
@@ -17,6 +25,7 @@ const addNewItem = () => {
     else if (inputText.value !== ""){
     let task = inputText.value;
     taskList.push({name: task});
+    saveToLocalStorage();
     render();
     inputText.value = "";
     }
@@ -24,23 +33,34 @@ const addNewItem = () => {
     
 let render = function () {
     newInputLine.innerHTML = "";
+    
 
     for (let task of taskList) {
+        
         let newParagraph = document.createElement("li");
         newParagraph.classList.add("list-group-item", "d-flex", "flex-row", "align-items-center", "justify-content-between", "item");
         newParagraph.innerHTML = task.name;
+        if (task.completed)
+        newParagraph.classList.add('done');
+        
         let deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("class", "btn");
-        deleteBtn.classList.add("btn-success");
+        deleteBtn.classList.add("btn-danger");
         deleteBtn.innerHTML = "X";
         let niceBtn = document.createElement("button");
-        niceBtn.classList.add("btn", "btn-info");
+        niceBtn.classList.add("btn", "btn-secondary");
         niceBtn.innerHTML = "i";
+        let checkbox = document.createElement("input");
+        checkbox.type = 'checkbox';
         let buttons = document.createElement("div");
         buttons.classList.add("buttons");
         buttons.appendChild(niceBtn);
         buttons.appendChild(deleteBtn);
+        newParagraph.prepend(checkbox);
+        if (task.completed)
+        checkbox.checked = true;
         newParagraph.appendChild(buttons);
+        
         newInputLine.appendChild(newParagraph);
 
         niceBtn.addEventListener("click", () => {
@@ -48,10 +68,18 @@ let render = function () {
             myAlert2.classList.add('alert-success');
             myAlert2.classList.toggle('alert');
         });
+        checkbox.addEventListener("change", () => {
+            if (task.completed === true)
+            task.completed = false;
+            else task.completed = true;
+            saveToLocalStorage();
+            render();
+        });
 
         deleteBtn.addEventListener("click", () => {
             let index = taskList.indexOf(task);
             taskList.splice(index, 1);
+            saveToLocalStorage();
             render();
     
         });
