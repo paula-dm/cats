@@ -1,6 +1,6 @@
 # cats
 
-<h1>A simple todo list.</h1>
+<h2>A simple todo list.</h2>
 <br>
 <h3>Main functions:</h3>
 <br>
