@@ -14,7 +14,7 @@ const getFromLocalStorage = function(){
     return JSON.parse(localStorage.getItem("taskList"));
 };
 
-const taskList =  getFromLocalStorage() || [{name: "Przykład, możesz go usunąć", completed: false,}];
+const taskList =  getFromLocalStorage() || [{name: "Przykład, możesz go usunąć", completed: false,}, {name: "Example - you can delete it", completed: true,}];
 
 const addNewItem = () => {
 
